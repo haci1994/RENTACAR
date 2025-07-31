@@ -1,0 +1,73 @@
+﻿@{
+    InfoLayoutModel model = Model;
+    var socials = model.Socials;
+    var contact = model.ContactInfo;
+}
+
+
+    <div id="wrapper">
+
+        <!-- page preloader begin -->
+        <div id="de-preloader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent scroll-light has-topbar">
+            <div id="topbar" class="topbar-dark text-light">
+                <div class="container">
+                    <div class="topbar-left xs-hide">
+                        <div class="topbar-widget">
+                            <div class="topbar-widget"><a href="#"><i class="fa fa-phone"></i>@contact.Number</a></div>
+                            <div class="topbar-widget"><a href="#"><i class="fa fa-envelope"></i><span class="__cf_email__" data-cfemail="4b2824253f2a283f0b392e253f2a273265282426">@contact.Mail</span></a></div>
+                            <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>
+                        </div>
+                    </div>
+
+                    <div class="topbar-right">
+                        <div class="social-icons">
+                        @foreach(var item in socials)
+                        {
+                            <a href="@item.URL"><i class="@item.Class"></i></a>
+                        }
+                    </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <div class="de-flex-col">
+                                    <!-- logo begin -->
+                                    <div id="logo">
+                                        <a asp-controller="Home" asp-action="index">
+                                            <img class="logo-1" src="~/images/@contact.Logo1" alt="">
+                                        <img class="logo-2" src="~/images/@contact.Logo2" alt="">
+                                        </a>
+                                    </div>
+                                    <!-- logo close -->
+                                </div>
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                    <li>
+                                        <a class="menu-item" asp-controller="Home" asp-action="Index">Home</a>
+                                    </li>
+                                    <li>
+                                        <a class="menu-item" asp-controller="Cars" asp-action="Index">Cars</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="login.html" class="btn-main">Sign In</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
