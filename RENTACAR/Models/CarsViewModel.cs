@@ -2,9 +2,9 @@
 
 namespace RENTACAR.Models
 {
-    public class HomeViewModel
+    public class CarsViewModel
     {
         public List<Car> Cars { get; set; } = [];
-        public List<ContactInfo> Contacts { get; set; } = [];
+        public int CarCount {  get; set; } 
     }
 }

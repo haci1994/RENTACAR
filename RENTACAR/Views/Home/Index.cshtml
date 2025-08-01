@@ -2,6 +2,7 @@
     HomeViewModel model = Model;
 
     var cars = model.Cars;
+    var contacts = model.Contacts;
 }
 
         <!-- content begin -->
@@ -708,7 +709,7 @@
                                 Call Us Now
                             </span>
                             <span class="pnb-num">
-                                1 200 333 800
+                                @contacts[0].Number
                             </span>
                         </div>
                         <a href="#" class="btn-main">Contact Us</a>

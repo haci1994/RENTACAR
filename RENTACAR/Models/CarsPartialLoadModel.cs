@@ -2,9 +2,8 @@
 
 namespace RENTACAR.Models
 {
-    public class HomeViewModel
+    public class CarsPartialLoadModel
     {
         public List<Car> Cars { get; set; } = [];
-        public List<ContactInfo> Contacts { get; set; } = [];
     }
 }

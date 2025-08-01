@@ -1,0 +1,33 @@
+﻿@using RENTACAR.DataContext.Entities
+@{
+    List<Car> cars = Model;
+}
+
+@foreach(var car in cars)
+{
+    <div class="col-xl-4 col-lg-6">
+        <div class="de-item mb30">
+            <div class="d-img">
+                <img src="~/images/cars/@car.carImages[0].Image" class="img-fluid" alt="">
+            </div>
+            <div class="d-info">
+                <div class="d-text">
+                    <h4>@car.Model.Brand.Name @car.Model.Name</h4>
+                    <div class="d-item_like">
+                        <i class="fa fa-heart"></i><span>25</span>
+                    </div>
+                    <div class="d-atr-group">
+                        <span class="d-atr"><img src="images/icons/1-green.svg" alt="">@car.Model.SeatCount</span>
+                        <span class="d-atr"><img src="images/icons/2-green.svg" alt="">@car.Model.TrunkSize</span>
+                        <span class="d-atr"><img src="images/icons/3-green.svg" alt="">@car.Model.DoorCount</span>
+                        <span class="d-atr"><img src="images/icons/4-green.svg" alt="">@car.Model.CarType.Name</span>
+                    </div>
+                    <div class="d-price">
+                        Daily rate from <span>@car.Price AZN</span>
+                        <a class="btn-main" href="car-single.html">RENT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

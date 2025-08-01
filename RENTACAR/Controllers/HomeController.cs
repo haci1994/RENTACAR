@@ -18,8 +18,9 @@ namespace RENTACAR.Controllers
         public IActionResult Index()
         {
             var cars = _dbContext.Cars.Where(x=> x.Price < 201).Include(z=>z.carImages).Include(h=>h.Model).ThenInclude(y=> y.Brand).ToList();
+            var contacts = _dbContext.ContactInfos.ToList();
 
-            var model = new HomeViewModel { Cars = cars };
+            var model = new HomeViewModel { Cars = cars, Contacts = contacts};
 
             return View(model);
         }
